@@ -4,15 +4,6 @@
 #include <R.h>
 #include <Rdefines.h>
 
-/*gsl_rng* get_rng_from_sexp2(SEXP rng) {
-	gsl_rng* gen = NULL;
-	if (TYPEOF(rng) != EXTPTRSXP || !(gen = (gsl_rng*)EXTPTR_PTR(rng))) {
-		error("not a random number generator");
-	}*/
-	/* if gen is NULL here, this will probably cause a segfault */
-/*	return gen;
-}*/
-
 gsl_rng* get_rng_from_sexp(SEXP rng);
 
 
