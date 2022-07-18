@@ -246,6 +246,8 @@ extern SEXP qrng_clone(SEXP);
 extern SEXP qrng_init(SEXP);
 extern SEXP qrng_name(SEXP);
 extern SEXP qrng_size(SEXP);
+extern SEXP ran_gamma(SEXP, SEXP, SEXP, SEXP);
+extern SEXP ran_gaussian(SEXP, SEXP, SEXP);
 extern SEXP rng_alloc(SEXP);
 extern SEXP rng_clone(SEXP);
 extern SEXP rng_get(SEXP, SEXP);
@@ -498,6 +500,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"qrng_init",       (DL_FUNC) &qrng_init,       1},
     {"qrng_name",       (DL_FUNC) &qrng_name,       1},
     {"qrng_size",       (DL_FUNC) &qrng_size,       1},
+    {"ran_gamma",       (DL_FUNC) &ran_gamma,       4},
+    {"ran_gaussian",    (DL_FUNC) &ran_gaussian,    3},
     {"rng_alloc",       (DL_FUNC) &rng_alloc,       1},
     {"rng_clone",       (DL_FUNC) &rng_clone,       1},
     {"rng_get",         (DL_FUNC) &rng_get,         2},

@@ -222,3 +222,54 @@ SEXP rng_uniform_int(SEXP r, SEXP sN, SEXP slength) {
 
 	return result;
 }
+
+/*
+SEXP ran_gaussian(SEXP r, SEXP ssigma, SEXP slength) {
+	SEXP result;
+	gsl_rng* gen;
+	int length, i;
+	double sigma;
+	
+	gen = get_rng_from_sexp(r);
+	PROTECT(slength = AS_NUMERIC(slength));
+	length = (int)*(NUMERIC_POINTER(slength));
+	PROTECT(ssigma = AS_NUMERIC(ssigma));
+	sigma = (double)*(NUMERIC_POINTER(ssigma));
+	UNPROTECT(2);
+
+	PROTECT(result = NEW_NUMERIC(length));
+	for(i = 0; i<length; i++) {
+		NUMERIC_POINTER(result)[i] = gsl_ran_gaussian(gen, sigma);
+	}
+	UNPROTECT(1);
+
+	return result;
+}
+
+
+SEXP ran_gamma(SEXP r, SEXP sa, SEXP sb, SEXP slength) {
+	SEXP result;
+	gsl_rng* gen;
+	int length, i;
+	double a, b;
+	
+	gen = get_rng_from_sexp(r);
+	PROTECT(slength = AS_NUMERIC(slength));
+	length = (int)*(NUMERIC_POINTER(slength));
+	PROTECT(sa = AS_NUMERIC(sa));
+	a = (double)*(NUMERIC_POINTER(sa));
+	PROTECT(sb = AS_NUMERIC(sb));
+	b = (double)*(NUMERIC_POINTER(sb));
+	UNPROTECT(3);
+
+	PROTECT(result = NEW_NUMERIC(length));
+	for(i = 0; i<length; i++) {
+		NUMERIC_POINTER(result)[i] = gsl_ran_gamma(gen, a, b);
+	}
+	UNPROTECT(1);
+
+	return result;
+}
+
+
+*/
